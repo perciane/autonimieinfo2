@@ -1,0 +1,18 @@
+
+<meta http-equiv="refresh" content="10;" />
+
+<h1>{{ "LE ZOO DE L ECOLE CENTRALE DE MARSEILLE" }}</h1>
+
+{% if animaux_list %}
+    <ul>
+    {% for animal in animaux_list %}
+        <li><a href="/animalerie/{{ animal.id }}/">{{ animal.animal_id }}</a>
+        <a>{{ animal.animal_race }}</a>
+        <a>{{ animal.animal_type }}</a>
+        <a>{{ animal.animal_etat }}</a>
+        <a>{{ animal.animal_lieu }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No animal are available.</p>
+{% endif %}
